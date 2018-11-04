@@ -5,8 +5,6 @@ function Airport(weather, capacity = 10){
     if (weather.isStormy()) return;
     if (this.planes.length === capacity) return;
 
-    console.log("Planes: " + this.planes.length + " - Capacity: " + capacity);
-
     this.planes.push(plane);
   }
 
