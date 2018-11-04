@@ -55,4 +55,24 @@ describe('Airport', function(){
     expect(airport.planes).toContain(plane)
   })
 
+  it('can prevent landing when airport is full', function(){
+    var weather = {
+      isStormy: function(){ return false; }
+    }
+    var capacity = 2;
+
+    airport = new Airport(weather, capacity);
+    plane1 = new Plane();
+    plane2 = new Plane();
+    plane3 = new Plane();
+
+    airport.land(plane1);
+    airport.land(plane2);
+    airport.land(plane3);
+
+    expect(airport.planes.length).toEqual(2)
+    expect(airport.planes[0]).toBe(plane1)
+    expect(airport.planes[1]).toBe(plane2)
+  })
+
 })
