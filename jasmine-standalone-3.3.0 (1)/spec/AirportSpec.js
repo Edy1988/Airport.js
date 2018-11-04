@@ -75,4 +75,21 @@ describe('Airport', function(){
     expect(airport.planes[1]).toBe(plane2)
   })
 
+  it('has default capacity 10', function(){
+    var weather = {
+      isStormy: function(){ return false; }
+    }
+
+    airport = new Airport(weather);
+    for (var i = 0; i < 10; i++) {
+      airport.land(new Plane());
+    }
+
+    expect(airport.planes.length).toEqual(10)
+
+    airport.land(new Plane());
+
+    expect(airport.planes.length).toEqual(10)
+  })
+
 })

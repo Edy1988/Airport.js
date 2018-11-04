@@ -1,4 +1,4 @@
-function Airport(weather, capacity){
+function Airport(weather, capacity = 10){
   this.planes = [];
 
   this.land = function(plane){
