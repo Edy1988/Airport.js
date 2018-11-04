@@ -1,4 +1,4 @@
-function Airport(){
+function Airport(weather){
 
   this.planes = [];
 
@@ -7,6 +7,8 @@ function Airport(){
   }
 
   this.takeOff = function(plane){
+    if (weather.isStormy()) return;
+    
     this.planes = this.planes.filter(element => (element !== plane));
   }
 
