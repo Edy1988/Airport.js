@@ -6,4 +6,8 @@ function Airport(){
     this.planes.push(plane);
   }
 
+  this.takeOff = function(plane){
+    this.planes = this.planes.filter(element => (element !== plane));
+  }
+
 }
